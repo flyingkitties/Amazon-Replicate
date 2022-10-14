@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 import Header from "../components/Header"
 import ProductFeed from "../components/ProductFeed";
 
@@ -13,10 +14,10 @@ export default function Home({products}) {
    
     <div className="bg-gray-200 ">
     
-      <Head>
+    <Head>
         <title>Rita's Amazon</title>
       </Head>
-      
+       
 {/* header */}
 <Header/>
 
@@ -28,6 +29,9 @@ export default function Home({products}) {
 
 
 {/* Product Feed */}
+
+
+<Footer/>
 
 </main>
 
