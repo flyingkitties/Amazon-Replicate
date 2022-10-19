@@ -5,17 +5,17 @@ import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
 
-const MAX_RATING = 5;
-const MIN_RATING = 1;
 
-function Product({ id, title, price, description, category, image }) {
+function Product({ id, title, price, description, category, image, rating}) {
 
 
 const dispatch = useDispatch();
 
-  const [rating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-  );
+  
+  const {rate, count } = rating;
+  const [stars] = useState(Math.floor(rate));
+  
+
 
   const [hasPrime] = useState(Math.random() < 0.5);
 
@@ -29,6 +29,9 @@ const product = {
   category, 
   image, 
   hasPrime,
+  rate,
+  count,
+  stars,
 };
 // Sending the product as an action to the REDUX store (in the basket Slice)
 dispatch(addToBasket(product));
@@ -41,15 +44,18 @@ dispatch(addToBasket(product));
       <Image src={image} height={200} width={200} objectFit="contain" />
 
       <h4 className="my-3 ">{title}</h4>
-
+<div className=" inline-flex">
       <div className="flex">
-        {Array(rating)
+        {Array(stars)
           .fill()
-          .map((_, i) => (
+          .map(() => (
             <StarIcon className="h-5 text-yellow-500" />
-        ))}
+        ))} 
       </div>
-
+      <div className="text-xs font-extralight px-1 pt-1 text-center items-center">
+        {count}
+      </div>
+</div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
       <div className="mb-5 ">

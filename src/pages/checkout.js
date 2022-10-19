@@ -6,15 +6,35 @@ import CheckoutProduct from '../components/CheckoutProduct';
 import Header from '../components/Header';
 import { selectItems, selectTotal } from '../slices/basketSlice';
 import Currency from "react-currency-formatter";
-import { useSession } from 'next-auth/react';
+import {signIn, signOut, useSession} from "next-auth/react"
+import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
+// const stripe = require('stripe')('pk_test_51LuFRYJTek5iFVM1D2CPXwHPx0pVYfHBLpkxAUTwFAmNkX1NdlbrYBq9YtM2O7gc6O2J4lSYQFqloqYrQ6wWtmmU00LUO1IbXd');
 
 function CheckOut() {
   const items = useSelector(selectItems); 
-  const session = useSession();
   const total = useSelector(selectTotal);
+  const { data: session, status } = useSession()
 
 
+  const createCheckoutSession = async () => {
+   const stripe = await stripePromise;
+    // Call the backend to create a checkout session 
+    const checkoutSession = await axios.post('/api/create-checkout-session', 
+    {
+      items: items,
+      email: session.user.email
+    });
+//Redirect user/customer to stripe Checkout
+const result = await stripe.redirectToCheckout({
+  sessionId: checkoutSession.data.id,
+});
+
+if (result.error) alert(result.error.message);
+
+  };
 
   return (
     <div className='bg-gray-100 '>
@@ -55,9 +75,9 @@ function CheckOut() {
 
 
 {/* Right */}
-<div className='flex flex-col bg-white p-10 shadow-md'>
-  {items.length > 0 && (
-    <>
+<div className='flex flex-col bg-white p-10 px-20 shadow-md'>
+  {items.length > 0 && 
+    <React.Fragment>
       <h2 className='whitespace-nowrap '>
       Subtotal ({items.length} items): {" "}
       <span className='font-bold '>
@@ -65,15 +85,17 @@ function CheckOut() {
       </span>
       </h2>
       <button 
-      desabled={!session}
+      role="link"
+      onClick={createCheckoutSession}
+      disabled={!session}
       className={`button mt-2 
-      ${!session && 
-      "from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed" }`} 
+      ${ !session && 
+      'from-gray-300 to-gray-500 border-gray-200 text-gray-200 cursor-pointer ' }`} 
       >
-        {!session ? "sign in to checkout" : "Proceed to checkout"}
+        {!session ? "Sign in to checkout" : "Proceed to checkout"}
       </button>
-    </>
-  )}
+      </React.Fragment>
+  }
 </div>
 
 
