@@ -14,9 +14,9 @@ module.exports = {
           DEFAULT: "#131921",
         },
       },
-    },
-  },
-  variants: {
+    },  
+  }, 
+  variants: { 
     extend: {},
   },
   plugins: [require("@tailwindcss/line-clamp")],
