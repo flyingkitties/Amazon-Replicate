@@ -8,12 +8,12 @@ import firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB5PVSJj8sQNrd8CaEEz4u9KnDQhqy4ryc",
-  authDomain: "rita-amz-replicate.firebaseapp.com",
-  projectId: "rita-amz-replicate",
-  storageBucket: "rita-amz-replicate.appspot.com",
-  messagingSenderId: "580921393508",
-  appId: "1:580921393508:web:d7f36d9b073801f98aba71"
+  apiKey: "AIzaSyBUZmQTJlZJCL7upsCwstkdBgZbL4dwOtU",
+  authDomain: "rita--replicate.firebaseapp.com",
+  projectId: "rita--replicate",
+  storageBucket: "rita--replicate.appspot.com",
+  messagingSenderId: "33219224981",
+  appId: "1:33219224981:web:a409f9240c2b0b713e829c"
 };
 
 // Initialize Firebase
