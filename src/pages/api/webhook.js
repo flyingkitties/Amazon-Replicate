@@ -66,7 +66,7 @@ export default async (req, res) => {
     console.log("inside Post")
     const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
-    const sig = req.headers["stripe-signature"];
+    const sig = req.headers[`stripe-signature`];
 
     let event;
 
@@ -79,7 +79,7 @@ export default async (req, res) => {
     }
    console.log("from stripe only");
     // Handle the checkout session compleated event
-    if (event.type === "checkout.session.completed") {
+    if (event.type === 'checkout.session.completed') {
       const session = event.data.object;
 
 
