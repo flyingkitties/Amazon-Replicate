@@ -4,7 +4,7 @@ import Currency from "react-currency-formatter";
 
 function Order({id, amount, amountShipping, items, timestamp,images}) {
 
-    console.log({timestamp});
+    console.log({amount});
   return (
     <div className='relative border rounded-md '>
       
