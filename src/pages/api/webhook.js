@@ -50,23 +50,18 @@ const fulfillOrder = async (session) => {
     
 };
 
-export const config = {
-  api: {
-    bodyParser: false,
-    externalResolver: true,
-  },
-};
+
 
 
 export default async (req, res) => {
-  if (req.method === "GET") {
-    const data = await 
-    app.firestore().collection("test")
-    .get();
-    const responseContent = data.docs.map((doc) => doc.data());
-    console.log({responseContent});
-    return res.status(200).send({responseContent});
-  }
+  // if (req.method === "GET") {
+  //   const data = await 
+  //   app.firestore().collection("test")
+  //   .get();
+  //   const responseContent = data.docs.map((doc) => doc.data());
+  //   console.log({responseContent});
+  //   return res.status(200).send({responseContent});
+  // }
   if (req.method === "POST") {
     console.log("inside Post")
     const requestBuffer = await buffer(req);
@@ -95,4 +90,11 @@ export default async (req, res) => {
         .catch((err) => console.log("error in fulfilment", err));
     }
   }
+};
+
+export const config = {
+  api: {
+    bodyParser: false,
+    externalResolver: true,
+  },
 };
