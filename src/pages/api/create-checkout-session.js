@@ -39,5 +39,6 @@ export default async (req, res) => {
       images: JSON.stringify(items.map((item) => item.image)),
     },
   });
+
   res.status(200).json({ id: session.id });
 };

@@ -1,11 +1,10 @@
-// Import the functions you need from the SDKs 
+// Import the functions you need from the SDKs
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import {getAuth} from "firebase/auth";
- import firebase from "firebase";
+import { getAuth } from "firebase/auth";
+import firebase from "firebase";
 //  import * as admin from "firebase-admin";
-
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,7 +13,7 @@ const firebaseConfig = {
   projectId: "rita--replicate",
   storageBucket: "rita--replicate.appspot.com",
   messagingSenderId: "33219224981",
-  appId: "1:33219224981:web:a409f9240c2b0b713e829c"
+  appId: "1:33219224981:web:a409f9240c2b0b713e829c",
 };
 
 // Initialize Firebase
@@ -25,11 +24,8 @@ const firebaseConfig = {
 const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
- const db = app.firestore();
+const db = app.firestore();
 
- export default db;
+export default db;
 
-  // export const auth = getAuth(app)
-
-
-
+// export const auth = getAuth(app)

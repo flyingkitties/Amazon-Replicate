@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  purge: [ 
+  purge: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -10,13 +10,13 @@ module.exports = {
       colors: {
         amazon_blue: {
           light: "#232F3E",
-          medium: "#1f2a38", 
+          medium: "#1f2a38",
           DEFAULT: "#131921",
         },
       },
-    },  
-  }, 
-  variants: { 
+    },
+  },
+  variants: {
     extend: {},
   },
   plugins: [require("@tailwindcss/line-clamp")],

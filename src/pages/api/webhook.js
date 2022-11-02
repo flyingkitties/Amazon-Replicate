@@ -1,13 +1,9 @@
 import { buffer } from "micro";
 import * as admin from "firebase-admin";
-import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore'
-
-
+import { getFirestore, Timestamp, FieldValue } from "firebase-admin/firestore";
 
 //Secure a connection to firebase from the backend
 const serviceAccount = require("../../../permissions.json");
-
-
 
 const app = !admin.apps.length
   ? admin.initializeApp({
@@ -15,10 +11,6 @@ const app = !admin.apps.length
       // databaseURL: "https://rita--replicate-default-rtdb.firebaseio.com"
     })
   : admin.app();
-
- 
-
-  
 
 //Establish connection to stripe
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
@@ -40,22 +32,17 @@ const fulfillOrder = async (session) => {
       images: JSON.parse(session.metadata.images),
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     })
-    .then( () => {
-      
+    .then(() => {
       console.log(`Success: order ${session.id} has been added to the BD`);
     })
     .catch((err) => {
-      console.log("Firebase error", err)
-    })
-    
+      console.log("Firebase error", err);
+    });
 };
-
-
-
 
 export default async (req, res) => {
   // if (req.method === "GET") {
-  //   const data = await 
+  //   const data = await
   //   app.firestore().collection("test")
   //   .get();
   //   const responseContent = data.docs.map((doc) => doc.data());
@@ -63,10 +50,11 @@ export default async (req, res) => {
   //   return res.status(200).send({responseContent});
   // }
   if (req.method === "POST") {
-    console.log("inside Post")
+    console.log("inside Post");
+
     const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
-    const sig = req.headers[`stripe-signature`];
+    const sig = req.headers["stripe-signature"];
 
     let event;
 
@@ -77,11 +65,10 @@ export default async (req, res) => {
       console.log("ERROR", err.message);
       return res.status(400).send(`Webhook error: ${err.message}`);
     }
-   console.log("from stripe only");
+    console.log("from stripe only");
     // Handle the checkout session compleated event
-    if (event.type === 'checkout.session.completed') {
+    if (event.type === "checkout.session.completed") {
       const session = event.data.object;
-
 
       console.log("fulfilling orders");
       // Fulfill the order

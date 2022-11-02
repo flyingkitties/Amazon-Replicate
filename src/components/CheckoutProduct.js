@@ -5,6 +5,7 @@ import Currency from "react-currency-formatter";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addToBasket, removeFromBasket } from "../slices/basketSlice";
+import { TrashIcon, PlusIcon } from "@heroicons/react/24/solid";
 
 function CheckoutProduct({
   id,
@@ -78,13 +79,20 @@ function CheckoutProduct({
           </div>
         )}
       </div>
-      <div className="flex flex-col space-y-2 my-auto justify-end ">
+      <div className="flex flex-col space-y-3 my-auto justify-end ">
         {/* Add and remove buttons */}
-        <button className="button mt-auto" onClick={addItemToBasket}>
-          Add to Basket{" "}
-        </button>
-        <button className="button mt-auto" onClick={removeItemFromBasket}>
-          Remove from Basket
+        {/* <button className="button mt-auto mx-auto" onClick={addItemToBasket}>
+          <PlusIcon className="h-3" />{" "}
+        </button> */}
+        <select className="px-3 mx-auto my-auto border border-[6] bg-gray-200 focus:outline-none rounded-md cursor-pointer">
+          <option>1</option>
+        </select>
+
+        <button
+          className=" mt-auto mx-auto place-content-center "
+          onClick={removeItemFromBasket}
+        >
+          <TrashIcon className=" py-auto h-4 text-gray-700  " />
         </button>
       </div>
     </div>

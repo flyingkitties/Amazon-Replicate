@@ -23,7 +23,7 @@ function ProductFeed({ products }) {
         ))}
 
       <img
-        className="md:col-span-full "
+        className="md:col-span-full md:-mt-40 lg:-mt-52 mx-auto"
         src="https://links.papareact.com/dyz"
       />
 

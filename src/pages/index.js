@@ -7,7 +7,7 @@ import ProductFeed from "../components/ProductFeed";
 
 export default function Home({ products }) {
   return (
-    <div className="bg-gray-200 ">
+    <div className="bg-gray-100 ">
       <Head>
         <title>Rita's Amazon</title>
       </Head>
