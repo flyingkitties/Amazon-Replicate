@@ -1,11 +1,11 @@
-import { StarIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
-import React from "react";
-import Currency from "react-currency-formatter";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { addToBasket, removeFromBasket } from "../slices/basketSlice";
-import { TrashIcon, PlusIcon } from "@heroicons/react/24/solid";
+import { StarIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
+import React from 'react';
+import Currency from 'react-currency-formatter';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { addToBasket, removeFromBasket } from '../slices/basketSlice';
+import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid';
 
 function CheckoutProduct({
   id,
@@ -90,8 +90,7 @@ function CheckoutProduct({
 
         <button
           className=" mt-auto mx-auto place-content-center "
-          onClick={removeItemFromBasket}
-        >
+          onClick={removeItemFromBasket}>
           <TrashIcon className=" py-auto h-4 text-gray-700  " />
         </button>
       </div>
