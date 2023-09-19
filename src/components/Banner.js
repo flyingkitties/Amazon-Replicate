@@ -31,7 +31,7 @@ function Banner() {
           <Image
             fill
             width={3000}
-            height={1100}
+            height={1200}
             priority
             src="https://links.papareact.com/6ff"
             alt="Banner photo 2"

@@ -45,7 +45,13 @@ function CheckoutProduct({
 
   return (
     <div className="grid grid-cols-5">
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image
+        src={image}
+        height={200}
+        width={200}
+        objectFit="contain"
+        alt="Checkout image"
+      />
 
       {/*  Middle  */}
       <div className="col-span-3 mx-5">
@@ -56,7 +62,10 @@ function CheckoutProduct({
             {Array(stars)
               .fill()
               .map(() => (
-                <StarIcon key={id} className="h-5 text-yellow-500" />
+                <StarIcon
+                  key={id}
+                  className="h-5 text-yellow-500"
+                />
               ))}
           </div>
           <div className="text-blue text-xs font-extralight px-1 pt-1 text-center items-center">
@@ -65,7 +74,10 @@ function CheckoutProduct({
         </div>
 
         <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <Currency quantity={price} currency="GBP" />
+        <Currency
+          quantity={price}
+          currency="GBP"
+        />
 
         {hasPrime && (
           <div className="flex items-center space-x-2">
@@ -90,7 +102,8 @@ function CheckoutProduct({
 
         <button
           className=" mt-auto mx-auto place-content-center "
-          onClick={removeItemFromBasket}>
+          onClick={removeItemFromBasket}
+        >
           <TrashIcon className=" py-auto h-4 text-gray-700  " />
         </button>
       </div>

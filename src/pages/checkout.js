@@ -1,14 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
-import React from "react";
-import { useSelector } from "react-redux";
-import CheckoutProduct from "../components/CheckoutProduct";
-import Header from "../components/Header";
-import { selectItems, selectTotal } from "../slices/basketSlice";
-import Currency from "react-currency-formatter";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import CheckoutProduct from '../components/CheckoutProduct';
+import Header from '../components/Header';
+import { selectItems, selectTotal } from '../slices/basketSlice';
+import Currency from 'react-currency-formatter';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import { loadStripe } from '@stripe/stripe-js';
+import axios from 'axios';
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
 // const stripe = require('stripe')('pk_test_51LuFRYJTek5iFVM1D2CPXwHPx0pVYfHBLpkxAUTwFAmNkX1NdlbrYBq9YtM2O7gc6O2J4lSYQFqloqYrQ6wWtmmU00LUO1IbXd');
@@ -21,7 +21,7 @@ function CheckOut() {
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
     // Call the backend to create a checkout session
-    const checkoutSession = await axios.post("/api/create-checkout-session", {
+    const checkoutSession = await axios.post('/api/create-checkout-session', {
       items: items,
       email: session.user.email,
     });
@@ -45,13 +45,14 @@ function CheckOut() {
             width={1020}
             height={250}
             objectFit="contain"
+            alt="Checkout Image"
           />
 
           <div className=" justify-center">
             <h1 className="text-3xl border-b pb-4">
               {items.length === 0
-                ? "Your Amazon Basket is Empty"
-                : "Shopping Basket"}
+                ? 'Your Amazon Basket is Empty'
+                : 'Shopping Basket'}
             </h1>
 
             <div className="flex-col p-5 space-y-10 bg-white ">
@@ -77,9 +78,12 @@ function CheckOut() {
           {items.length > 0 && (
             <React.Fragment>
               <h2 className="whitespace-nowrap ">
-                Subtotal ({items.length} items):{" "}
+                Subtotal ({items.length} items):{' '}
                 <span className="font-bold ">
-                  <Currency quantity={total} currency="GBP" />
+                  <Currency
+                    quantity={total}
+                    currency="GBP"
+                  />
                 </span>
               </h2>
               <button
@@ -89,10 +93,10 @@ function CheckOut() {
                 className={`button mt-2 
       ${
         !session &&
-        "from-gray-300 to-gray-500 border-gray-200 text-gray-200 cursor-pointer "
+        'from-gray-300 to-gray-500 border-gray-200 text-gray-200 cursor-pointer '
       }`}
               >
-                {!session ? "Sign in to checkout" : "Proceed to checkout"}
+                {!session ? 'Sign in to checkout' : 'Proceed to checkout'}
               </button>
             </React.Fragment>
           )}

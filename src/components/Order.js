@@ -1,6 +1,6 @@
-import React from "react";
-import moment from "moment";
-import Currency from "react-currency-formatter";
+import React from 'react';
+import moment from 'moment';
+import Currency from 'react-currency-formatter';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
   console.log({ amount });
@@ -12,15 +12,21 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
       >
         <div>
           <p className="font-bold text-xs">Order Placed</p>
-          <p>{moment.unix(timestamp).format("DD MM YYYY")}</p>
+          <p>{moment.unix(timestamp).format('DD MM YYYY')}</p>
         </div>
 
         <div>
           <p className="text-xs font-bold">Total </p>
           <p>
-            <Currency quantity={amount} currency="GBP" />- Next Day Delivery{" "}
-            {""}
-            <Currency quantity={amountShipping} currency="GBP" />
+            <Currency
+              quantity={amount}
+              currency="GBP"
+            />
+            - Next Day Delivery {''}
+            <Currency
+              quantity={amountShipping}
+              currency="GBP"
+            />
           </p>
         </div>
 
@@ -42,7 +48,11 @@ text-xs whitespace-nowrap"
       <div className="p-5 sm:p-10 ">
         <div className="flex space-x-6 overflow-x-auto ">
           {images.map((image) => (
-            <img src={image} alt="" className="h-20 object-contain sm:h-32 " />
+            <img
+              src={image}
+              alt="Product Image"
+              className="h-20 object-contain sm:h-32 "
+            />
           ))}
         </div>
       </div>

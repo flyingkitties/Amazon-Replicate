@@ -49,6 +49,7 @@ function Product({ id, title, price, description, category, image, rating }) {
         height={200}
         width={200}
         objectFit="contain"
+        alt="Product Image"
       />
 
       <h1 className="my-3">{title}</h1>

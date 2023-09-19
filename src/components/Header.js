@@ -29,13 +29,15 @@ function Header() {
             objectFit="contain"
             className="cursor-pointer"
             onClick={() => router.push('/')}
+            alt="Logo Image"
           />
         </div>
 
         {/* Search bar */}
         <div
           className="flex items-center  h-10 rounded-md flex-grow 
-        cursor-pointer bg-yellow-400 hover:bg-yellow-500 invisible sm:visible  ">
+        cursor-pointer bg-yellow-400 hover:bg-yellow-500 invisible sm:visible  "
+        >
           <input
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
             type="text"
@@ -46,26 +48,35 @@ function Header() {
         {/* Right Section */}
         <div
           className="text-white flex  items-center text-xs 
-        space-x-6 mx-6 whitespace-nowrap  ">
-          <div onClick={!session ? signIn : signOut} className="link ">
+        space-x-6 mx-6 whitespace-nowrap  "
+        >
+          <div
+            onClick={!session ? signIn : signOut}
+            className="link "
+          >
             <p className="hover:underline ">
               {session ? `Hello, ${session.user.name}` : 'Sign In'}
             </p>
             <p className="font-extrabold  md:text-sm">Account & lists</p>
           </div>
 
-          <div className="link" onClick={() => router.push('/orders')}>
+          <div
+            className="link"
+            onClick={() => router.push('/orders')}
+          >
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& orders</p>
           </div>
 
           <div
             onClick={() => router.push('/checkout')}
-            className=" relative link flex items-center">
+            className=" relative link flex items-center"
+          >
             <span
               className="absolute top-0 right-0 sm:right-10 h-4 w-4
            bg-yellow-400 text-center rounded-full text-black 
-           font-bold ">
+           font-bold "
+            >
               {items.length}
             </span>
             <ShoppingCartIcon className="h-10 " />

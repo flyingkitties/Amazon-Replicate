@@ -1,12 +1,12 @@
-import React from "react";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import React from 'react';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -71,7 +71,7 @@ function Footer() {
             Host an Amazon Hub
           </p>
           <p className="flex text-sm hover:underline py-1 ">
-            {" "}
+            {' '}
             <ChevronRightIcon className="h-2 flex mt-1 mr-1" /> See More Make
             Money with Us
           </p>
@@ -147,6 +147,7 @@ function Footer() {
           height={28}
           objectFit="contain"
           className="cursor-pointer"
+          alt="Logo Image"
         />
 
         <div className="flex flex-wrap p-2 justify-center space-x-3  text-white text-xs font-extralight  ">
