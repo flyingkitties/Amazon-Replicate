@@ -1,9 +1,9 @@
-import { React, useEffect, useState } from "react";
-import Image from "next/image";
-import { StarIcon } from "@heroicons/react/24/solid";
-import Currency from "react-currency-formatter";
-import { useDispatch } from "react-redux";
-import { addToBasket } from "../slices/basketSlice";
+import { React, useEffect, useState } from 'react';
+import Image from 'next/image';
+import { StarIcon } from '@heroicons/react/24/solid';
+import Currency from 'react-currency-formatter';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice';
 
 function Product({ id, title, price, description, category, image, rating }) {
   const [isSSR, setIsSSR] = useState(true);
@@ -43,15 +43,24 @@ function Product({ id, title, price, description, category, image, rating }) {
         {category}
       </p>
 
-      <Image src={image} height={200} width={200} objectFit="contain" />
+      <Image
+        loading="lazy"
+        src={image}
+        height={200}
+        width={200}
+        objectFit="contain"
+      />
 
-      <h4 className="my-3 ">{title}</h4>
+      <h1 className="my-3">{title}</h1>
       <div className=" inline-flex">
         <div className="flex">
           {Array(stars)
             .fill()
             .map(() => (
-              <StarIcon className="h-5 text-yellow-500" />
+              <StarIcon
+                key={id}
+                className="h-5 text-yellow-500"
+              />
             ))}
         </div>
         <div className="text-xs font-extralight px-1 pt-1 text-center items-center">
@@ -61,24 +70,31 @@ function Product({ id, title, price, description, category, image, rating }) {
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
       <div className="mb-0 ">
-        <Currency quantity={price} currency="GBP" />
+        <Currency
+          quantity={price}
+          currency="GBP"
+        />
       </div>
 
       {!isSSR && (
         <div className="mt-0 ">
           {hasPrime && (
             <div className="flex items-center space-x-2 mt-0">
-              <img
-                className="h-12"
+              <Image
+                width={1}
+                height={50}
                 src="https://links.papareact.com/fdw"
-                alt=""
+                alt="Free Next-day Delivery image"
               />
               <p className="text-xs text-gray-500 ">Free Next-day Delivery</p>
             </div>
           )}
         </div>
       )}
-      <button onClick={addItemToBasket} className="mt-auto button ">
+      <button
+        onClick={addItemToBasket}
+        className="mt-auto button "
+      >
         Add to Basket
       </button>
     </div>
