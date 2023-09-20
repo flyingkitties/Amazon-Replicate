@@ -4,6 +4,7 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import Currency from 'react-currency-formatter';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
+import primeLogo from '../../public/prime.png';
 
 function Product({ id, title, price, description, category, image, rating }) {
   const [isSSR, setIsSSR] = useState(true);
@@ -80,14 +81,17 @@ function Product({ id, title, price, description, category, image, rating }) {
       {!isSSR && (
         <div className="mt-0 ">
           {hasPrime && (
-            <div className="flex items-center space-x-2 mt-0">
+            <div className="flex items-center space-x-1 my-2">
               <Image
-                width={1}
-                height={50}
-                src="https://links.papareact.com/fdw"
-                alt="Free Next-day Delivery image"
+                height={15}
+                width={40}
+                className="w-12"
+                src={primeLogo}
+                alt="Free Next-day Delivery"
               />
-              <p className="text-xs text-gray-500 ">Free Next-day Delivery</p>
+              <p className="text-xs text-gray-500 pb-[0.15rem] ">
+                Free Next-day Delivery
+              </p>
             </div>
           )}
         </div>

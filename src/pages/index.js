@@ -15,10 +15,6 @@ export default function Home({ products }) {
           content="Amazon Replica - Rita Guilherme - Web Engineer"
           key="desc"
         />
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="script-src 'none'"
-        />
       </Head>
 
       {/* header */}

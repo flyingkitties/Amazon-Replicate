@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addToBasket, removeFromBasket } from '../slices/basketSlice';
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid';
+import primeLogo from '../../public/prime.png';
 
 function CheckoutProduct({
   id,
@@ -80,31 +81,38 @@ function CheckoutProduct({
         />
 
         {hasPrime && (
-          <div className="flex items-center space-x-2">
-            <img
-              loading="lazy"
+          <div className="flex items-center space-x-1 my-2">
+            <Image
+              height={15}
+              width={40}
               className="w-12"
-              src="https://links.papareact.com/fdw"
+              src={primeLogo}
               alt="Free Next-day Delivery"
             />
-            <p className="text-sm">Free Next-day Delivery</p>
+            <p className="text-xs text-gray-500 pb-[0.15rem] ">
+              Free Next-day Delivery
+            </p>
           </div>
         )}
       </div>
-      <div className="flex flex-col space-y-3 my-auto justify-end ">
+      <div className="flex items-center justify-center ">
         {/* Add and remove buttons */}
         {/* <button className="button mt-auto mx-auto" onClick={addItemToBasket}>
           <PlusIcon className="h-3" />{" "}
         </button> */}
-        <select className="px-3 mx-auto my-auto border border-[6] bg-gray-200 focus:outline-none rounded-md cursor-pointer">
+        <select className="px-3 mx-2 my-auto border border-[6] bg-gray-200 focus:outline-none rounded-md cursor-pointer">
           <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
         </select>
 
         <button
-          className=" mt-auto mx-auto place-content-center "
+          className="flex items-center justify-center "
           onClick={removeItemFromBasket}
         >
-          <TrashIcon className=" py-auto h-4 text-gray-700  " />
+          <TrashIcon className=" py-auto h-4 text-gray-700 hover:text-red-700 " />
         </button>
       </div>
     </div>
