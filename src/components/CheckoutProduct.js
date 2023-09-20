@@ -85,7 +85,7 @@ function CheckoutProduct({
               loading="lazy"
               className="w-12"
               src="https://links.papareact.com/fdw"
-              alt=""
+              alt="Free Next-day Delivery"
             />
             <p className="text-sm">Free Next-day Delivery</p>
           </div>

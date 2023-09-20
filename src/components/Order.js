@@ -51,7 +51,7 @@ text-xs whitespace-nowrap"
             <img
               src={image}
               alt="Product Image"
-              className="h-20 object-contain sm:h-32 "
+              className="h-20 object-contain sm:h-32"
             />
           ))}
         </div>
