@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/24/solid';
-import formatAsCurrency from '../components/Currency';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
 import primeLogo from '../../public/prime.png';

@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import CurrencyFormated from './CurrencyFormated';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
   console.log({ amount });

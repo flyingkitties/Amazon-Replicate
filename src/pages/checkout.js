@@ -8,6 +8,7 @@ import { selectItems, selectTotal } from '../slices/basketSlice';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
+import CurrencyFormated from '../components/CurrencyFormated';
 const stripePromise = loadStripe(process.env.stripe_public_key);
 
 // const stripe = require('stripe')('pk_test_51LuFRYJTek5iFVM1D2CPXwHPx0pVYfHBLpkxAUTwFAmNkX1NdlbrYBq9YtM2O7gc6O2J4lSYQFqloqYrQ6wWtmmU00LUO1IbXd');
