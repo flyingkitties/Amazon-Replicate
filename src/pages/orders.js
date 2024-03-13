@@ -25,6 +25,7 @@ export async function getServerSideProps(context) {
     .orderBy('timestamp', 'desc')
     .get();
 
+  console.log('stripeOrders:', stripeOrders);
   //Stripe Orders
   const ordersA = await Promise.all(
     stripeOrders.docs.map(async (order) => ({
@@ -41,8 +42,10 @@ export async function getServerSideProps(context) {
     })),
   );
 
-  const orders = JSON.parse(JSON.stringify(ordersA));
+  console.log('ordersA:', ordersA);
 
+  const orders = JSON.parse(JSON.stringify(ordersA));
+  console.log('orders:', orders);
   return {
     props: {
       orders,
@@ -52,6 +55,8 @@ export async function getServerSideProps(context) {
 
 function orders({ orders }) {
   const { data: session, status } = useSession();
+
+  console.log('inside orders:', orders);
 
   return (
     <div>
