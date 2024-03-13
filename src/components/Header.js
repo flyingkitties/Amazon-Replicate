@@ -20,8 +20,8 @@ function Header() {
   return (
     <header>
       {/* top nav */}
-      <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className=" flex items-center flex-grow sm:flex-grow-0">
+      <div className="flex items-center bg-amazon_blue p-1  py-2">
+        <div className=" flex items-center">
           <Image
             src="https://live.staticflickr.com/65535/52940251116_383aed970b_n.jpg"
             width={150}
@@ -35,8 +35,8 @@ function Header() {
 
         {/* Search bar */}
         <div
-          className="flex items-center  h-10 rounded-md flex-grow 
-        cursor-pointer bg-yellow-400 hover:bg-yellow-500 invisible sm:visible  "
+          className="items-center h-10 rounded-md flex-grow 
+        cursor-pointer bg-yellow-400 hover:bg-yellow-500 hidden sm:flex "
         >
           <input
             className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none px-4"
@@ -48,8 +48,8 @@ function Header() {
 
         {/* Right Section */}
         <div
-          className="text-white flex  items-center text-xs 
-        space-x-6 mx-6 whitespace-nowrap  "
+          className="text-white flex items-center text-[10px] sm:text-xs 
+        space-x-3 sm:space-x-6 sm:mx-6 whitespace-nowrap  "
         >
           <div
             onClick={!session ? signIn : signOut}
@@ -89,9 +89,9 @@ function Header() {
       </div>
 
       {/* Bottom nav */}
-      <div className="flex items-center space-x-4 p-2 pl-6 bg-amazon_blue-light text-white text-sm ">
+      <div className="flex items-center space-x-2 sm:space-x-4 p-2 pl-6 bg-amazon_blue-light text-white text-[10px] sm:text-sm ">
         <p className="link flex items-center font-semibold  ">
-          <Bars3Icon className="h-6 mr-4" />
+          <Bars3Icon className="h-6 sm:mr-4" />
           All
         </p>
         <p className="link flex items-center">Prime Video</p>

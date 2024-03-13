@@ -18,124 +18,62 @@ function Footer() {
       </div>
 
       {/* Mid footer */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10  bg-amazon_blue-medium text-white p-10 px-10 lg:px-40">
-        <div className="px-3 cursor-pointer items-center">
-          <h2 className="font-bold py-2">Get to Know Us</h2>
-          <p className="text-sm hover:underline py-1 font-light">Careers</p>
-          <p className="text-sm hover:underline py-1 font-light">About Us</p>
-          <p className="text-sm hover:underline py-1 font-light">
-            UK Modern Slavery
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Sustainability
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Science
-          </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-5 md:gap-10 bg-amazon_blue-medium text-white py-10 px-5 sm:px-10 xl:px-40 text-center sm:text-left">
+        <div className="px-3 cursor-pointer">
+          <h2 className="midFooterTitle">Get to Know Us</h2>
+          <p className="midFooterText">Careers</p>
+          <p className="midFooterText">About Us</p>
+          <p className="midFooterText">UK Modern Slavery</p>
+          <p className="midFooterText">Sustainability</p>
+          <p className="midFooterText">Amazon Science</p>
         </div>
 
         <div className="px-3 cursor-pointer">
-          <h2 className="font-bold py-2 ">Make Money with Us</h2>
-          <p className="text-sm hover:underline py-1 font-light">
-            Sell on Amazon
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Sell on Amazon Business
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Sell on Amazon Handmade
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Sell on Amazon Launchpad
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Protect and build your brand
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Associates Program
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Fulfilment by Amazon
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Seller Fulfilled Prime
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Advertise your Products
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Independently Publish with Us
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">Amazon Pay</p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Host an Amazon Hub
-          </p>
-          <p className="flex text-sm hover:underline py-1 ">
+          <h2 className="midFooterTitle">Make Money with Us</h2>
+          <p className="midFooterText">Sell on Amazon</p>
+          <p className="midFooterText">Sell on Amazon Business</p>
+          <p className="midFooterText">Sell on Amazon Handmade</p>
+          <p className="midFooterText">Sell on Amazon Launchpad</p>
+          <p className="midFooterText">Protect and build your brand</p>
+          <p className="midFooterText">Associates Program</p>
+          <p className="midFooterText">Fulfilment by Amazon</p>
+          <p className="midFooterText">Seller Fulfilled Prime</p>
+          <p className="midFooterText">Advertise your Products</p>
+          <p className="midFooterText">Independently Publish with Us</p>
+          <p className="midFooterText">Amazon Pay</p>
+          <p className="midFooterText">Host an Amazon Hub</p>
+          <p className="flex midFooterText">
             {' '}
-            <ChevronRightIcon className="h-2 flex mt-1 mr-1" /> See More Make
-            Money with Us
+            <ChevronRightIcon className="seeMoreIcon" /> See More Make Money
+            with Us
           </p>
         </div>
 
         <div className="px-3 cursor-pointer">
-          <h2 className="font-bold py-2 ">Amazon Payment Methods</h2>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Platinum Mastercard
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Classic Mastercard
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Money Store
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">Gift Cards</p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Currency Converter
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Payment Methods Help
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Shop with Points
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Top Up Your Account
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Top Up Yoour Account in Store
-          </p>
+          <h2 className="midFooterTitle">Amazon Payment Methods</h2>
+          <p className="midFooterText">Amazon Platinum Mastercard</p>
+          <p className="midFooterText">Amazon Classic Mastercard</p>
+          <p className="midFooterText">Amazon Money Store</p>
+          <p className="midFooterText">Gift Cards</p>
+          <p className="midFooterText">Amazon Currency Converter</p>
+          <p className="midFooterText">Payment Methods Help</p>
+          <p className="midFooterText">Shop with Points</p>
+          <p className="midFooterText">Top Up Your Account</p>
+          <p className="midFooterText">Top Up Yoour Account in Store</p>
         </div>
 
         <div className="px-3 cursor-pointer">
-          <h2 className="font-bold py-2 ">Let Us Help You</h2>
-          <p className="text-sm hover:underline py-1 font-light">
-            COVID-19 and Amazon
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Track Packages or View Orders
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Delivery Rates & Policies
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Prime
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Returns & Replacements
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">Recycling</p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Manage Your Content and Devices
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Mobile App
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Amazon Assistant
-          </p>
-          <p className="text-sm hover:underline py-1 font-light">
-            Customer Service
-          </p>
+          <h2 className="midFooterTitle">Let Us Help You</h2>
+          <p className="midFooterText">COVID-19 and Amazon</p>
+          <p className="midFooterText">Track Packages or View Orders</p>
+          <p className="midFooterText">Delivery Rates & Policies</p>
+          <p className="midFooterText">Amazon Prime</p>
+          <p className="midFooterText">Returns & Replacements</p>
+          <p className="midFooterText">Recycling</p>
+          <p className="midFooterText">Manage Your Content and Devices</p>
+          <p className="midFooterText">Amazon Mobile App</p>
+          <p className="midFooterText">Amazon Assistant</p>
+          <p className="midFooterText">Customer Service</p>
         </div>
       </div>
 
@@ -170,7 +108,7 @@ function Footer() {
       </div>
 
       {/* Other Services */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 bg-amazon_blue text-white text-[11px] p-5 pl-10  xl:px-40 ">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 bg-amazon_blue text-white text-center text-[11px] p-5 sm:px-10 xl:px-40 ">
         <div className="grid py-5 cursor-pointer hover:underline">
           <h3 className="font-bold ">Amazon Music</h3>
           <p className="font-extralight ">Stream millions of songs</p>
@@ -250,8 +188,11 @@ function Footer() {
         </div>
       </div>
 
-      <div className="  bg-amazon_blue text-white text-xs p-5 border-t-[1px] border-amazon_blue-medium">
-        <div className="flex justify-center p-5 text-xs ">
+      <div
+        className="  bg-amazon_blue text-white text-xs p-5 
+      border-t-[1px] border-amazon_blue-medium"
+      >
+        <div className="flex-row sm:flex text-center justify-center space-y-3 sm:space-y-0 p-5 text-xs ">
           <p className="px-5">Conditions of Use & Sale</p>
           <p className="px-5"> Privacy Notice</p>
           <p className="px-5"> Cookies Notice</p>
