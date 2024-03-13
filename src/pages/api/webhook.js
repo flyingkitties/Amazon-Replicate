@@ -48,8 +48,6 @@ export default async (req, res) => {
     return res.status(200).send({ responseContent });
   }
   if (req.method === 'POST') {
-    console.log('inside Post');
-
     const requestBuffer = await buffer(req);
     const payload = requestBuffer.toString();
     const sig = req.headers['stripe-signature'];
