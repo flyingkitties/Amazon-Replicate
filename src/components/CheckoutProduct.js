@@ -1,12 +1,12 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import React from 'react';
-import formatAsCurrency from '../components/Currency';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addToBasket, removeFromBasket } from '../slices/basketSlice';
 import { TrashIcon, PlusIcon } from '@heroicons/react/24/solid';
 import primeLogo from '../../public/prime.png';
+import CurrencyFormated from './CurrencyFormated';
 
 function CheckoutProduct({
   id,
@@ -75,10 +75,7 @@ function CheckoutProduct({
         </div>
 
         <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <formatAsCurrency
-          value={price}
-          currency="GBP"
-        />
+        <CurrencyFormated price={price} />
 
         {hasPrime && (
           <div className="flex items-center space-x-1 my-2">

@@ -5,6 +5,7 @@ import formatAsCurrency from '../components/Currency';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../slices/basketSlice';
 import primeLogo from '../../public/prime.png';
+import CurrencyFormated from './CurrencyFormated';
 
 function Product({ id, title, price, description, category, image, rating }) {
   const [isSSR, setIsSSR] = useState(true);
@@ -73,10 +74,7 @@ function Product({ id, title, price, description, category, image, rating }) {
         <p className="text-xs my-2 line-clamp-2">{description}</p>
 
         <div className="mb-0 ">
-          <formatAsCurrency
-            value={price}
-            currency="GBP"
-          />
+          <CurrencyFormated price={price} />
         </div>
 
         {!isSSR && (
