@@ -20,14 +20,14 @@ function Header() {
   return (
     <header>
       {/* top nav */}
-      <div className="flex items-center bg-amazon_blue p-1  py-2">
-        <div className=" flex items-center">
+      <div className="flex items-center bg-amazon_blue p-2 md:p-4 xl:p-5 py-2 space-x-2 md:space-x-5 justify-between">
+        <div className="flex items-center">
           <Image
             src="https://live.staticflickr.com/65535/52940251116_383aed970b_n.jpg"
             width={150}
             height={40}
-            objectFit="contain"
-            className="cursor-pointer"
+            // objectFit="contain"
+            className="cursor-pointer h-8 md:h-10 w-auto"
             onClick={() => router.push('/')}
             alt="Logo Image"
           />
@@ -80,7 +80,7 @@ function Header() {
             >
               {items.length}
             </span>
-            <ShoppingCartIcon className="h-10 " />
+            <ShoppingCartIcon className="h-8 md:h-10 " />
             <p className=" hidden md:text-sm sm:inline font-extrabold  mt-2">
               Basket
             </p>

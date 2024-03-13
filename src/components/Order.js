@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Currency from 'react-currency-formatter';
+import formatAsCurrency from '../components/Currency';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
   console.log({ amount });
@@ -18,13 +18,13 @@ function Order({ id, amount, amountShipping, items, timestamp, images }) {
         <div>
           <p className="text-xs font-bold">Total </p>
           <p>
-            <Currency
-              quantity={amount}
+            <formatAsCurrency
+              value={amount}
               currency="GBP"
             />
             - Next Day Delivery {''}
-            <Currency
-              quantity={amountShipping}
+            <formatAsCurrency
+              value={amountShipping}
               currency="GBP"
             />
           </p>

@@ -1,7 +1,7 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import React from 'react';
-import Currency from 'react-currency-formatter';
+import formatAsCurrency from '../components/Currency';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addToBasket, removeFromBasket } from '../slices/basketSlice';
@@ -75,8 +75,8 @@ function CheckoutProduct({
         </div>
 
         <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <Currency
-          quantity={price}
+        <formatAsCurrency
+          value={price}
           currency="GBP"
         />
 

@@ -18,7 +18,7 @@ function Banner() {
       >
         <div>
           <Image
-            fill
+            // fill
             width={3000}
             height={1200}
             priority
@@ -29,7 +29,7 @@ function Banner() {
 
         <div>
           <Image
-            fill
+            // fill
             width={3000}
             height={1200}
             priority
@@ -40,7 +40,7 @@ function Banner() {
 
         <div>
           <Image
-            fill
+            // fill
             width={3000}
             height={1200}
             priority
