@@ -3,7 +3,6 @@ import moment from 'moment';
 import CurrencyFormated from './CurrencyFormated';
 
 function Order({ id, amount, amountShipping, items, timestamp, images }) {
-  console.log({ amount });
   return (
     <div className="relative border rounded-md ">
       <div

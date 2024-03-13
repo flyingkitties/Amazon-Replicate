@@ -1,15 +1,15 @@
-import db from "../../Firebase";
-import { getSession, useSession } from "next-auth/react";
-import React from "react";
-import Header from "../components/Header";
-import moment from "moment";
+import db from '../../Firebase';
+import { getSession, useSession } from 'next-auth/react';
+import React from 'react';
+import Header from '../components/Header';
+import moment from 'moment';
 
-import Order from "../components/Order";
+import Order from '../components/Order';
 
 function orders({ orders }) {
   const { data: session, status } = useSession();
 
-  console.log({ orders });
+  console.log(db.orders);
 
   return (
     <div>
@@ -17,7 +17,7 @@ function orders({ orders }) {
 
       <main className="max-w-screen-lg mx-auto p-10 bg-gray-100 ">
         <h1 className="text-3xl border-b mb-2 pb-1 border-yellow-400">
-          Your orders{" "}
+          Your orders{' '}
         </h1>
 
         {session ? (
@@ -38,7 +38,7 @@ function orders({ orders }) {
                 timestamp={timestamp}
                 images={images}
               />
-            )
+            ),
           )}
         </div>
       </main>
@@ -49,7 +49,7 @@ function orders({ orders }) {
 export default orders;
 
 export async function getServerSideProps(context) {
-  const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+  const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
   //Get users logged in credentials
   const session = await getSession(context);
@@ -62,10 +62,10 @@ export async function getServerSideProps(context) {
 
   //Firebase dataBase
   const stripeOrders = await db
-    .collection("users")
+    .collection('users')
     .doc(`session.matadata.email`)
-    .collection("order")
-    .orderBy("timestamp", "desc")
+    .collection('order')
+    .orderBy('timestamp', 'desc')
     .get();
 
   //Stripe Orders
@@ -81,7 +81,7 @@ export async function getServerSideProps(context) {
           limit: 100,
         })
       ).data,
-    }))
+    })),
   );
 
   const orders = JSON.parse(JSON.stringify(ordersA));
